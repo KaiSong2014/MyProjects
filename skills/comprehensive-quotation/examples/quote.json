@@ -1,0 +1,17 @@
+{
+  "project_name": "工业采集试点示例",
+  "scope_note": "仅演示格式与公式：一个车间、只读采集、单环境部署；以下人工费率、工时、设备及税率均为虚构测试参数。实际项目需重新分析和询价。",
+  "tax_rates": {"软件": 0.06, "硬件": 0.13},
+  "rows": [
+    {"module": "设备采集", "description": "梳理12台设备寄存器和采样规则，明确状态、温度及计数的单位、异常值和验收样本。", "role": "产品经理", "kind": "labor", "unit_rate": 80, "hours": 8, "tax_group": "软件", "notes": "只读采集，不包含PLC写入或安全联锁。"},
+    {"module": "设备采集", "description": "实现Modbus TCP及OPC UA采集适配、每5秒读取、断网缓存与补传去重，提供采集异常日志。", "role": "设备集成", "kind": "labor", "unit_rate": 100, "hours": 32, "tax_group": "软件", "notes": "客户提供寄存器及接口说明；共用连接管理只计一次。"},
+    {"module": "设备采集", "description": "验证采样单位、状态转换、断网恢复及补传去重，使用模拟输入逐项核对记录。", "role": "测试", "kind": "labor", "unit_rate": 60, "hours": 12, "tax_group": "软件", "notes": "覆盖两种协议和断网30分钟恢复场景。"},
+    {"module": "看板与告警", "description": "实现12台设备状态看板、单设备7天趋势查询、告警筛选及确认操作界面。", "role": "前端开发", "kind": "labor", "unit_rate": 80, "hours": 24, "tax_group": "软件", "notes": "复用现有UI组件；不做三维场景。"},
+    {"module": "看板与告警", "description": "实现温度持续30秒超阈值规则、解除记录、操作确认、历史查询及告警CSV导出接口。", "role": "后端开发", "kind": "labor", "unit_rate": 90, "hours": 28, "tax_group": "软件", "notes": "本期只含站内通知；短信与预测诊断不计入。"},
+    {"module": "看板与告警", "description": "核对阈值持续时间、解除逻辑、确认记录及CSV内容，并验证只读角色权限。", "role": "测试", "kind": "labor", "unit_rate": 60, "hours": 10, "tax_group": "软件", "notes": "以约定验收数据核对趋势及告警。"},
+    {"module": "硬件与实施", "description": "配置两台测试网关、完成部署和现场采集联调，提交操作说明并进行一次培训。", "role": "部署实施", "kind": "labor", "unit_rate": 80, "hours": 16, "tax_group": "软件", "notes": "差旅由客户承担；安装人工与设备采购分别列价。"},
+    {"module": "硬件与实施", "description": "采购WG-T01测试网关，至少双网口，用于两类设备协议接入。", "kind": "hardware", "quantity": 2, "unit_price": 1800, "unit": "台", "tax_group": "硬件", "notes": "虚构测试型号及价格，来源为测试文档02，2026-10-12；不代表市场行情。"},
+    {"module": "硬件与实施", "description": "采购IPC-T02测试工控机，16GB内存、512GB固态盘；安装现有采集服务。", "kind": "hardware", "quantity": 1, "unit_price": 3200, "unit": "台", "tax_group": "硬件", "notes": "虚构测试型号及价格，来源为测试文档02，2026-10-12；实际型号和保修需询价。"},
+    {"module": "硬件与实施", "description": "采购DISPLAY-T03测试显示器，24英寸，用于本地看板显示。", "kind": "hardware", "quantity": 1, "unit_price": 700, "unit": "台", "tax_group": "硬件", "notes": "虚构测试型号及价格，来源为测试文档02，2026-10-12；实际采购另行确认。"}
+  ]
+}

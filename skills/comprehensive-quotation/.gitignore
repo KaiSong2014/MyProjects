@@ -1,0 +1,9 @@
+node_modules/
+__pycache__/
+*.pyc
+outputs/
+.qa/
+.DS_Store
+*.inspect.ndjson
+.env
+.env.*

@@ -1,0 +1,4 @@
+interface:
+  display_name: "综合报价系统"
+  short_description: "分析需求文档并拆分软件功能与硬件费用，输出可直接交付客户的单工作表报价清单"
+  default_prompt: "使用 $comprehensive-quotation 分析我提交的文档，按综合报价系统格式生成单工作表 Excel 报价清单。"
